@@ -39,19 +39,14 @@ class Game:
     def traverse(self, callback, path=None, base_step_id=None):
         path = path if self.is_path(path) else self.path
         step_id = base_step_id if isinstance(base_step_id, str) else path["name"]
-        should_continue = True
         for step in path["action"]:
             current_step_id = step_id + "." + step["name"]
             is_path = self.is_path(step)
             if callback(step, is_path, current_step_id) == False:
-                should_continue = False
-                break
+                return False
 
-            if is_path and not self.traverse(callback, step, current_step_id):
-                should_continue = False
-                break
-
-        return should_continue
+            if is_path and self.traverse(callback, step, current_step_id) == False:
+                return False
 
     def find(self, step_id):
         if not self.step_exists(step_id):
