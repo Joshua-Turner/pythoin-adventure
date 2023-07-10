@@ -1,7 +1,7 @@
 class Inventory:
     def __init__(self, initialItems={}):
-        self.item_keys = ('Dagger', 'Sword', 'Hammer', 'Coins')
-        self.default_items = {'Dagger': 0, 'Sword': 0, 'Hammer': 0, 'Coins': 0}
+        self.item_keys = ("Dagger", "Sword", "Hammer", "Coins")
+        self.default_items = {"Dagger": 0, "Sword": 0, "Hammer": 0, "Coins": 0}
         self.items = {**self.default_items}
         self.add_items(initialItems)
 
@@ -24,18 +24,18 @@ class Inventory:
 
     def print_item_keys(self):
         print()
-        print('===| Available Items |===')
+        print("===| Available Items |===")
         for key in self.item_keys:
             print(key)
         else:
-            print('===| No more items! |===')
+            print("===| No more items! |===")
         print()
 
     def print_inventory(self):
         print()
-        print('===| Inventory |===')
+        print("===| Inventory |===")
         for item in self.items:
-            print(item + ': ' + str(self.items[item]))
+            print(item + ": " + str(self.items[item]))
         else:
-            print('===| No more items! |===')
+            print("===| No more items! |===")
         print()

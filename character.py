@@ -10,12 +10,12 @@ class Character:
 
     def print_character_info(self):
         print()
-        print('===| Character Information |===')
-        print('Name: ' + self.name)
-        print('Age: ' + str(self.age))
-        print('Class: ' + self.character_class)
+        print("===| Character Information |===")
+        print("Name: " + self.name)
+        print("Age: " + str(self.age))
+        print("Class: " + self.character_class)
         print()
-        print('========================================')
+        print("========================================")
         self.inventory.print_inventory()
-        print('========================================')
+        print("========================================")
         print()
