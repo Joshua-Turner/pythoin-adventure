@@ -17,12 +17,7 @@ def enter(character, step_id):
     print("Before you are two pathways.")
     direction = input(character.name + ": Do you go left(L) or right(R)?").lower()
     next_step_name = "start_left" if direction == "l" else "start_right"
-    print(
-        'You choose "'
-        + direction
-        + '" so next step is: '
-        + create_next_step_id(step_id, next_step_name)
-    )
+
     return create_next_step_id(step_id, next_step_name)
 
 
@@ -58,8 +53,8 @@ def start_right(**args):
     answer = input("You find a some coins. Do you pick it up? (y/n)").lower()
 
     if answer == "y":
-        print("Adding 10 coind to inventory.")
-        args["character"].inventory.add_item("Coin", 10)
+        print("Adding 10 coins to inventory.")
+        args["character"].inventory.add_item("Coins", 10)
 
     return True
 
